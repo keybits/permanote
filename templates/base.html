@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <title>PermaNote</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/note.min.css') }}" />
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/hilite.css') }}" />
+    {% block extra_head %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.inline-attachment.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.hotkeys.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">PermaNote</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('create') }}">New Note</a></li>
+              <li><a href="{{ url_for('taglist') }}">Tags</a></li>
+            {% block extra_header %}{% endblock %}
+          </ul>
+          {% block search_bar %}
+            <form action="{{ url_for('index') }}" class="navbar-form navbar-right" id="search-form" method="get" role="search">
+              <div class="form-group">
+                <input class="form-control" name="q" placeholder="Search" type="text" value="{% if search %}{{ search }}{% endif %}">
+              </div>
+            </form>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="alert alert-{{ category }} alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <p>{{ message }}</p>
+        </div>
+      {% endfor %}
+
+      {% block page_header %}
+        <div class="page-header">
+          <h1>{% block content_title %}{% endblock %}</h1>
+        </div>
+      {% endblock %}
+
+      {% block content %}{% endblock %}
+
+      <footer>
+        <hr />
+      </footer>
+    </div>
+    <script type="text/javascript">
+        // highlight individual tags
+        var words = $("#tags").text().split(" ");
+        $("#tags").empty();
+        $.each(words, function(i, v) {
+            if (i > 0)
+            $("#tags").append($("<button type='button' class='btn btn-sm btn-primary' style='margin-right:10px;'>").text(v));
+        });
+        // set up inline attachment upload url
+        $(function() {
+            $('textarea').inlineattachment({
+                uploadUrl: '/upload/'
+            });
+        });
+        // Shortcut to create a new note
+        $(document).bind('keydown', 'ctrl+q', function() {
+        window.location.href = "/create/";
+        });
+        // Submit the form from the textarea with Meta + Enter
+        content.addEventListener('keydown', function(e) {
+          if(e.keyCode == 13 && e.metaKey) {
+            this.form.submit();
+        }
+        });
+    </script>
+  </body>
+</html>

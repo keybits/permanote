@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entry.title }}{% endblock %}
+
+{% block content_title %}{{ entry.title }}{% endblock %}
+
+{% block extra_header %}
+    <li><a href="{{ url_for('edit', slug=entry.slug) }}">Edit Note</a></li>
+{% endblock %}
+
+{% block content %}
+  <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
+  {{ entry.html_content }}
+  <p><strong>Tags:</strong></p>
+  <p id="tags">{{ tags }}</p>
+{% endblock %}

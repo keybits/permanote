@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Notes{% endblock %}
+
+{% block content_title %}
+  {% if search %}Search "{{ search }}"
+  {% elif tag %}Notes tagged {{ tag }}
+  {% else %} Notes {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for entry in object_list %}
+    {% if search %}
+      {% set entry = entry.entry %}
+    {% endif %}
+    <h3>
+      <a href="{{ url_for('detail', slug=entry.slug) }}">
+        {{ entry.title }}
+      </a>
+    </h3>
+    <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
+  {% else %}
+    <p>No entries have been created yet.</p>
+  {% endfor %}
+  {% include "includes/pagination.html" %}
+{% endblock %}

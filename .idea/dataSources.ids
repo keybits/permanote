@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQLite -" uuid="ffd484ec-08d2-408c-a98d-3df2c56f79c6">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="entry" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="timestamp" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_tag_entry_through_1" table="tag_entry_through" schema="" catalog="" columns="entry_id"/>
+      <index name="entry_timestamp" unique="true" columns="timestamp"/>
+      <index name="entry_slug" unique="true" columns="slug"/>
+    </table>
+    <table name="ftsentry" schema="" catalog="" type="TABLE">
+      <column name="entry_id" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="content" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="ftsentry_content" schema="" catalog="" type="TABLE">
+      <column name="docid" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="c0entry_id" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="c1content" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="docid"/>
+    </table>
+    <table name="ftsentry_docsize" schema="" catalog="" type="TABLE">
+      <column name="docid" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="size" sqlType="BLOB" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="docid"/>
+    </table>
+    <table name="ftsentry_segdir" schema="" catalog="" type="TABLE">
+      <column name="level" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="idx" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="start_block" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="leaves_end_block" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="end_block" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="root" sqlType="BLOB" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="idx"/>
+    </table>
+    <table name="ftsentry_segments" schema="" catalog="" type="TABLE">
+      <column name="blockid" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="block" sqlType="BLOB" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="blockid"/>
+    </table>
+    <table name="ftsentry_stat" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="value" sqlType="BLOB" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="tag" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="tag" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_tag_entry_through_2" table="tag_entry_through" schema="" catalog="" columns="tag_id"/>
+    </table>
+    <table name="tag_entry_through" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="tag_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="entry_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_tag_entry_through_1" columns="entry_id" ref-table="entry" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_tag_entry_through_2" columns="tag_id" ref-table="tag" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="tag_entry_through_tag_id_entry_id" unique="true" columns="tag_id,entry_id"/>
+      <index name="tag_entry_through_entry_id" unique="true" columns="entry_id"/>
+      <index name="tag_entry_through_tag_id" unique="true" columns="tag_id"/>
+    </table>
+  </data-source>
+</component>
