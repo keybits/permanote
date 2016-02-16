@@ -5,6 +5,7 @@ uploads/*
 env/*
 *.pyc
 PLAN.md
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
