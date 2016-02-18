@@ -1,11 +1,13 @@
 *.db
 *.sublime-workspace
 *.sublime-project
-uploads/*
-env/*
+uploads/
+env/
 *.pyc
 PLAN.md
 .idea
+sandstorm-keyring
+.vagrant/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
