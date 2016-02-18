@@ -60,7 +60,7 @@ def create():
         # already exists)
         elif request.form.get('content'):
             entry = Entry.create(
-                title="{:%d %B %Y at %H:%M:%S}".format(datetime.datetime.now()),
+                title="{:%a %d %b %Y at %H:%M:%S}".format(datetime.datetime.now()),
                 content=request.form['content'])
             flash('Note created successfully.', 'success')
             return redirect(url_for('detail', slug=entry.slug))

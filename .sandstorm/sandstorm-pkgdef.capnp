@@ -9,7 +9,7 @@ const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
   # "pkgdef" constant.
 
-  id = "k5dywa07tcr0tv8wc3wysmygfhuj2mey6nw1uza8gn64atuuf2xh",
+  id = "p9mxcw5gnsdd91kw8p8c6ay0htne5dz8msx9xgds9kv8aerhe51h",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
@@ -239,6 +239,7 @@ const myCommand :Spk.Manifest.Command = (
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
+    (key = "PYTHONPATH", value = "/opt/app"),
     (key = "HOME", value = "/var"),
     (key = "SANDSTORM", value = "1"),
     # Export SANDSTORM=1 into the environment, so that apps running within Sandstorm

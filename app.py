@@ -6,11 +6,14 @@ from playhouse.flask_utils import FlaskDB
 # Configuration values.
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
 
-# The playhouse.flask_utils.FlaskDB object accepts database URL configuration.
-DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'permanote2.db')
-# Version for Sandstorm TODO make this work in both dev and prod
-# DATABASE = 'sqliteext:////var/permanote2.db'
-DEBUG = True
+# The playhouse.flask_utils.FlaskDB object accepts database URL configuration
+# set db location and debug depending on if the app is running locally or
+# in production on Sandstorm
+if os.getenv('SANDSTORM'):
+    DATABASE = 'sqliteext:////var/permanote.db'
+else:
+    DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'permanote.db')
+    DEBUG = True
 
 application = Flask(__name__)
 application.config.from_object(__name__)
@@ -24,10 +27,10 @@ flask_db = FlaskDB(application)
 database = flask_db.database
 
 # Upload folder and file allowed extensions
-# for sandstorm TODO make this work in both dev and prod
-# application.config['UPLOAD_FOLDER'] = '/var/uploads'
-# for development
-application.config['UPLOAD_FOLDER'] = '/home/tom/Development/permanote2/uploads'
+if os.getenv('SANDSTORM'):
+    application.config['UPLOAD_FOLDER'] = '/var/uploads'
+else:
+    application.config['UPLOAD_FOLDER'] = '%s/uploads' % os.path.join(APP_DIR)
 
 # file types allowed for upload
 application.config['ALLOWED_EXTENSIONS'] = set(['jpg', 'png', 'gif'])

@@ -27,4 +27,3 @@ done
 
 # Start nginx.
 /usr/sbin/nginx -g "daemon off;"
-

@@ -1,1 +1,0 @@
-{"virtualbox":{"/opt/app":{"guestpath":"/opt/app","hostpath":"/home/tom/dev/permanote2","disabled":false},"/host-dot-sandstorm":{"guestpath":"/host-dot-sandstorm","hostpath":"/home/tom/.sandstorm","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/tom/dev/permanote2","disabled":false}}}
