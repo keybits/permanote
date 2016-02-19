@@ -1,7 +1,10 @@
 import os
 
 from flask import Flask
+from flask import url_for as flask_url_for
 from playhouse.flask_utils import FlaskDB
+
+
 
 # Configuration values.
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -26,9 +29,17 @@ flask_db = FlaskDB(application)
 # the wrapper.
 database = flask_db.database
 
+def url_for(endpoint, **kwargs):
+    kwargs.setdefault('_external', True)
+    return flask_url_for(endpoint, **kwargs)
+
+application.jinja_env.globals['url_for'] = url_for
+
+
 # Upload folder and file allowed extensions
 if os.getenv('SANDSTORM'):
     application.config['UPLOAD_FOLDER'] = '/var/uploads'
+    # application.config['PREFERRED_URL_SCHEME'] = 'https'
 else:
     application.config['UPLOAD_FOLDER'] = '%s/uploads' % os.path.join(APP_DIR)
 

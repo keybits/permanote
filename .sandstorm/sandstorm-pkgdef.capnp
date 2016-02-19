@@ -1,4 +1,4 @@
-@0xd6f94990be93469f;
+@0xa821a41ffa687175;
 
 using Spk = import "/sandstorm/package.capnp";
 # This imports:
@@ -9,7 +9,7 @@ const pkgdef :Spk.PackageDefinition = (
   # The package definition. Note that the spk tool looks specifically for the
   # "pkgdef" constant.
 
-  id = "r9hjy0qrfuwxrnezp3ch9sntkj3ryjq2zd0jgzt6tznn62hq1chh",
+  id = "svwrpwnd3c380d1f99ge7g0qnjdq6y785c36s7qtqryxwkmn20qh",
   # Your app ID is actually its public key. The private key was placed in
   # your keyring. All updates must be signed with the same key.
 
@@ -182,8 +182,5 @@ const myCommand :Spk.Manifest.Command = (
     (key = "PYTHONPATH", value = "/opt/app"),
     (key = "HOME", value = "/var"),
     (key = "SANDSTORM", value = "1"),
-    # Export SANDSTORM=1 into the environment, so that apps running within Sandstorm
-    # can detect if $SANDSTORM="1" at runtime, switching UI and/or backend to use
-    # the app's Sandstorm-specific integration code.
   ]
 );
