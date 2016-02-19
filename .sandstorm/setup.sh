@@ -24,6 +24,7 @@ server {
     location / {
         uwsgi_pass unix:///var/run/uwsgi.sock;
         include uwsgi_params;
+        uwsgi_param UWSGI_SCHEME $scheme;
     }
 }
 EOF
