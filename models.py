@@ -61,7 +61,9 @@ class Entry(flask_db.Model):
             fts_entry = FTSEntry(entry_id=self.id)
             force_insert = True
         else:
-            force_insert = False
+            query = FTSEntry.delete().where(FTSEntry.entry_id == self.id)
+            query.execute()
+            force_insert = True
         fts_entry.content = '\n'.join((self.title, self.content))
         fts_entry.save(force_insert=force_insert)
 
