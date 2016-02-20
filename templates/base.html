@@ -9,7 +9,7 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/note.min.css') }}" />
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/hilite.css') }}" />
     {% block extra_head %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/jquery-1.12.0.min.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.inline-attachment.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/jquery.hotkeys.js') }}"></script>
@@ -79,11 +79,11 @@
                 uploadUrl: '/upload/'
             });
         });
-        // Shortcut to create a new note
+        // Shortcut to create a new note with ctrl + q
         $(document).bind('keydown', 'ctrl+q', function() {
         window.location.href = "/create/";
         });
-        // Submit the form from the textarea with Meta + Enter
+        // Shortcut to submit the form from the textarea with Super + Enter
         if(document.getElementById('content')) {
           content.addEventListener('keydown', function(e) {
             if(e.keyCode == 13 && e.metaKey) {
