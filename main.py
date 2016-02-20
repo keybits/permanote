@@ -10,4 +10,5 @@ def create_tables():
 
 if __name__ == '__main__':
     create_tables()
-    application.run(host='0.0.0.0', port=8000, debug=True)
+    # Run on port 8000 for Sandstorm
+    application.run(host='0.0.0.0', port=8000)

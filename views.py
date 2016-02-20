@@ -1,8 +1,10 @@
+import os
 import datetime
 import urllib
 
 from flask import (flash, redirect, render_template, request,
                    Response, url_for, jsonify, send_from_directory)
+from flask import url_for as flask_url_for
 from werkzeug.utils import secure_filename
 from playhouse.flask_utils import get_object_or_404, object_list
 from playhouse.sqlite_ext import *
@@ -10,6 +12,12 @@ from playhouse.sqlite_ext import *
 from app import application
 from models import Entry, Tag, EntryTags
 
+# Make url_for use https for redirects on Sandstorm
+def url_for(endpoint, **kwargs):
+    if os.getenv('SANDSTORM'):
+        kwargs.setdefault('_external', True)
+        kwargs.setdefault('_scheme', 'https')
+    return flask_url_for(endpoint, **kwargs)
 
 @application.route('/')
 def index():
