@@ -1,3 +1,3 @@
-# 0.01 Initial release
+# 0.1.0 Initial release
 
-Very alpha functional version for private testing.
+Functional version for private testing on Sandstorm

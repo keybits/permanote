@@ -2,7 +2,9 @@
 
 A personal note taking application.
 
-This is very alpha at the moment while I get it working on Sandstorm. More details to follow.
+The app is functional and works on Sandstorm. There are a number of feature improvements planned that will be listed here soon.
+
+Since the app is designed to run on Sandstorm it [doesn't implement user accounts or access control](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control).
 
 ## Warning and help appreciated
 
@@ -20,6 +22,8 @@ Many thanks to Charles for his helpful blog posts and for creating excellent sup
 
 The dolphin logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji
 
-**Why a dolphin for the logo?** Evernote use and elephant because they are known to have good memories. Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
+**Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memories.
+
+Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
 
 ![PermaNote dolphin logo](.sandstorm/app-graphics/permanote-dolphin150.png)
