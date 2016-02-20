@@ -18,6 +18,8 @@ Many thanks to Charles for his helpful blog posts and for creating excellent sup
 
 ### Logo
 
-Logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji
+The dolphin logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji
 
 **Why a dolphin for the logo?** Evernote use and elephant because they are known to have good memories. Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
+
+![PermaNote dolphin logo](.sandstorm/app-graphics/permanote-dolphin150.png)
