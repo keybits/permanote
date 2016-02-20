@@ -1,10 +1,10 @@
-# PermaNote
+# Permanote
 
-A personal note taking application.
+A personal note-taking application.
 
 The app is functional and works on Sandstorm. There are a number of feature improvements planned that will be listed here soon.
 
-Since the app is designed to run on Sandstorm it [doesn't implement user accounts or access control](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control).
+Since the app is designed to run on [Sandstorm](https://sandstorm.io/) it [doesn't implement user accounts or access control](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control).
 
 ## Warning and help appreciated
 
@@ -26,4 +26,4 @@ The dolphin logo is from the Twitter twemoji collection: https://github.com/twit
 
 Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
 
-![PermaNote dolphin logo](.sandstorm/app-graphics/permanote-dolphin150.png)
+![Permanote dolphin logo](.sandstorm/app-graphics/permanote-dolphin150.png)
