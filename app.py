@@ -36,7 +36,7 @@ else:
     application.config['DEBUG'] = True
 
 # file types allowed for upload
-application.config['ALLOWED_EXTENSIONS'] = set(['jpg', 'png', 'gif'])
+application.config['ALLOWED_EXTENSIONS'] = set(['jpg', 'jpeg', 'png', 'gif', 'webp'])
 
 # This is used by micawber, which will attempt to generate rich media
 # embedded objects with maxwidth=800.
