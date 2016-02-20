@@ -41,13 +41,13 @@ const pkgdef :Spk.PackageDefinition = (
     # case.
 
     metadata = (
-      icons = (
-        # Various icons to represent the app in various contexts.
-        #appGrid = (svg = embed "path/to/appgrid-128x128.svg"),
-        #grain = (svg = embed "path/to/grain-24x24.svg"),
-        #market = (svg = embed "path/to/market-150x150.svg"),
-        #marketBig = (svg = embed "path/to/market-big-300x300.svg"),
-      ),
+    icons = (
+      appGrid = (png = (dpi1x = embed "app-graphics/permanote-dolphin128.png")),
+      grain = (png = (dpi1x = embed "app-graphics/permanote-dolphin24.png",
+                      dpi2x = embed "app-graphics/permanote-dolphin48.png")),
+      market = (png = (dpi1x = embed "app-graphics/permanote-dolphin150.png")),
+      marketBig = (png = (dpi1x = embed "app-graphics/permanote-dolphin300.png"))
+    ),
       website = "https://github.com/keybits/permanote",
       codeUrl = "https://github.com/keybits/permanote",
       license = (openSource = mit),
