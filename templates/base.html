@@ -84,11 +84,13 @@
         window.location.href = "/create/";
         });
         // Submit the form from the textarea with Meta + Enter
-        content.addEventListener('keydown', function(e) {
-          if(e.keyCode == 13 && e.metaKey) {
-            this.form.submit();
-        }
-        });
+        if(document.getElementById('content')) {
+          content.addEventListener('keydown', function(e) {
+            if(e.keyCode == 13 && e.metaKey) {
+              this.form.submit();
+          }
+        })
+        };
     </script>
   </body>
 </html>
