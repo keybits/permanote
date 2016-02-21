@@ -23,6 +23,8 @@ class Entry(flask_db.Model):
     slug = CharField(unique=True)
     content = TextField()
     timestamp = DateTimeField(default=datetime.datetime.now, index=True)
+    lastedited = DateTimeField(default=datetime.datetime.now, index=True)
+    archived = BooleanField(default=False)
 
     @property
     def html_content(self):
@@ -69,7 +71,15 @@ class Entry(flask_db.Model):
 
     @classmethod
     def public(cls):
+        return Entry.select().where(Entry.archived == False)
+
+    @classmethod
+    def all(cls):
         return Entry.select()
+
+    @classmethod
+    def archive(cls):
+        return Entry.select().where(Entry.archived == True)
 
     @classmethod
     def search(cls, query):
@@ -90,7 +100,8 @@ class Entry(flask_db.Model):
             FTSEntry.rank().alias('score'))
                 .join(Entry, on=(FTSEntry.entry_id == Entry.id).alias('entry'))
                 .where(
-            (FTSEntry.match(search)))
+                    (Entry.archived == False) &
+                    (FTSEntry.match(search)))
                 .order_by(SQL('score').desc()))
 
 

@@ -31,8 +31,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li><a href="{{ url_for('create') }}">New Note</a></li>
+              {% block extra_header %}{% endblock %}
               <li><a href="{{ url_for('taglist') }}">Tags</a></li>
-            {% block extra_header %}{% endblock %}
+              <li style="font-size: 0.8em;"><a href="{{ url_for('archive') }}">Archive</a></li>
           </ul>
           {% block search_bar %}
             <form action="{{ url_for('index') }}" class="navbar-form navbar-right" id="search-form" method="get" role="search">

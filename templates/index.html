@@ -5,6 +5,7 @@
 {% block content_title %}
   {% if search %}Search "{{ search }}"
   {% elif tag %}Notes tagged {{ tag }}
+  {% elif archive %}Archived Notes
   {% else %} Notes {% endif %}
 {% endblock %}
 

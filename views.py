@@ -37,6 +37,10 @@ def index():
         search=search_query,
         check_bounds=False)
 
+@application.route('/archive/')
+def archive():
+    query = Entry.archive().order_by(Entry.timestamp.desc())
+    return object_list('index.html', query, archive=archive)
 
 @application.route('/create/', methods=['GET', 'POST'])
 def create():
@@ -44,7 +48,8 @@ def create():
         if request.form.get('title') and request.form.get('content'):
             entry = Entry.create(
                 title=request.form['title'],
-                content=request.form['content'])
+                content=request.form['content'],
+                archived=request.form.get('archived') or False)
             tags = request.form['tags'].split()
             # present is a check to see if the tag exists
             present = 0
@@ -79,7 +84,7 @@ def create():
 
 @application.route('/<slug>/')
 def detail(slug):
-    query = Entry.public()
+    query = Entry.all()
     entry = get_object_or_404(query, Entry.slug == slug)
     tags = ""
     for tag in entry.tags:
@@ -97,6 +102,7 @@ def edit(slug):
         if request.form.get('title') and request.form.get('content'):
             entry.title = request.form['title']
             entry.content = request.form['content']
+            entry.archived = request.form.get('archived') or False
             # convert the string of tags to a list
             tags = request.form['tags'].split()
             # present is a check to see if the tag exists
@@ -140,6 +146,7 @@ def taglist():
                         .select(Tag, count.alias('entry_count'))
                         .join(EntryTags)
                         .join(Entry)
+                        .where(Entry.archived==False)
                         .group_by(Tag)
                         .order_by(count.desc(), Tag.tag))
     return object_list('taglist.html', tags_with_counts, check_bounds=False)
@@ -148,7 +155,7 @@ def taglist():
 @application.route('/tag/<tag>/')
 def thistag(tag):
     search_query = request.args.get('q')
-    query = (Entry
+    query = (Entry.public()
              .select()
              .join(EntryTags)
              .join(Tag)
