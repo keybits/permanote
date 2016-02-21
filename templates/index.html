@@ -21,7 +21,7 @@
     </h3>
     <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
   {% else %}
-    <p>No entries have been created yet.</p>
+    <p>No notes to display.</p>
   {% endfor %}
   {% include "includes/pagination.html" %}
 {% endblock %}

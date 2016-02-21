@@ -40,7 +40,11 @@ def index():
 @application.route('/archive/')
 def archive():
     query = Entry.archive().order_by(Entry.timestamp.desc())
-    return object_list('index.html', query, archive=archive)
+    return object_list(
+        'index.html',
+        query,
+        archive=archive,
+        check_bounds=False)
 
 @application.route('/create/', methods=['GET', 'POST'])
 def create():

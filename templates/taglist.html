@@ -8,7 +8,6 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Here are all the tags!</h1>
   {% for tag in object_list %}
     <h3><a href="{{ url_for('thistag', tag=tag.tag) }}">{{ tag.tag }}</a> ( {{ tag.entry_count}} )</h3>
   {% else %}
