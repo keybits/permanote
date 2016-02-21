@@ -19,10 +19,9 @@
         {{ entry.title }}
       </a>
     </h3>
-    <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
-    {% if entry.lastedited.strftime('%Y-%m-%d at %H:%M') != entry.timestamp.strftime('%Y-%m-%d at %H:%M') %}
-    <p>Last edited {{ entry.lastedited.strftime('%Y-%m-%d at %H:%M') }}</p>
+    <p class="small">Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}{% if entry.lastedited.strftime('%Y-%m-%d at %H:%M') != entry.timestamp.strftime('%Y-%m-%d at %H:%M') %} | Last edited {{ entry.lastedited.strftime('%Y-%m-%d at %H:%M') }}
     {% endif %}
+    </p>
   {% else %}
     <p>No notes to display.</p>
   {% endfor %}
