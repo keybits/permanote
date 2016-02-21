@@ -2,11 +2,13 @@
 
 {% block title %}{{ entry.title }}{% endblock %}
 
-{% block content_title %}{{ entry.title }}{% endblock %}
-
 {% block extra_header %}
     <li><a href="{{ url_for('edit', slug=entry.slug) }}">Edit Note</a></li>
 {% endblock %}
+
+{% block content_title %}<a href="{{ url_for('edit', slug=entry.slug) }}">{{ entry.title }}</a>{% endblock %}
+
+
 
 {% block content %}
   <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
