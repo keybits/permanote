@@ -1,16 +1,21 @@
 # Permanote Description
 
-Permanote is a simple note taking application.
+A personal note-taking application designed to be clean and easy to use.
 
-Features:
+## Features
 
-- markdown for note editing
-- syntax highlighting for code snippets
-- drag and drop image uploading
-- copy and paste image uploading
-- tagging
-- full text search
+- Markdown editing for notes
+- Copy and paste or drag and drop image uploading
+- Full text search
+- Tags
+- Syntax highlighting
+- Rich media embeds (e.g. YouTube videos)
+- Archive old notes
+- Keyboard shortcuts to create new note and submit note when done editing
 
-The application is designed for Sandstorm so there is no authentication.
+## Non-features
 
-Also there is no concept of 'notebooks'. Simply create a new Sandstorm Grain for each new notebook that you want.
+- No notebooks - create a new Sandstorm grain
+- No user accounts or access control ([because it's a Sandstorm app](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control))
+- No WYSIWIG editing - you need to write your own Markdown
+- No syncing or offline capability

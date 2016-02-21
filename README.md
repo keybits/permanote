@@ -1,14 +1,37 @@
 # Permanote
 
-A personal note-taking application.
+A personal note-taking application designed for Sandstorm.
 
-The app is functional and works on Sandstorm. There are a number of feature improvements planned that will be listed here soon.
-
-Since the app is designed to run on [Sandstorm](https://sandstorm.io/) it [doesn't implement user accounts or access control](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control).
+It has the features I want. I use it for keeping a journal and recording technical tips and documentation when I need longer form notes. For me it has replaced Evernote and Google Keep - although it clearly doesn't have many of Evernote's features. I still use Google Keep for small quick notes that I need to be synced with mobile devices.
 
 ## Warning and help appreciated
 
-This was hacked together over a weekend. The code is horrible in many places! Pull requests gratefully received if you'd like to clean anything up.
+This was hacked together over a weekend - please consider it Beta software and don't trust important data just yet. The code is horrible in many places! Pull requests gratefully received if you'd like to clean anything up before I get there.
+
+## Features
+
+- Markdown editing for notes
+- Copy and paste or drag and drop image uploading
+- Full text search
+- Tags
+- Syntax highlighting
+- Rich media embeds (e.g. YouTube videos)
+- Archive old notes
+- Keyboard shortcuts to create new note and submit note when done editing
+
+## Non-features
+
+- No notebooks - create a new Sandstorm grain
+- No user accounts or access control ([because it's a Sandstorm app](https://docs.sandstorm.io/en/latest/developing/handbook/#does-not-implement-user-accounts-or-access-control))
+- No WYSIWIG editing - you need to write your own Markdown
+- No syncing or offline capability
+
+## Technology
+
+- Flask
+- Peewee
+- SQLite
+- jquery inline-attachment
 
 ## Credits
 
