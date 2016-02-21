@@ -107,6 +107,7 @@ def edit(slug):
             entry.title = request.form['title']
             entry.content = request.form['content']
             entry.archived = request.form.get('archived') or False
+            entry.lastedited = datetime.datetime.now()
             # convert the string of tags to a list
             tags = request.form['tags'].split()
             # present is a check to see if the tag exists

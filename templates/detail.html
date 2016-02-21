@@ -12,6 +12,9 @@
 
 {% block content %}
   <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
+  {% if entry.lastedited.strftime('%Y-%m-%d at %H:%M') != entry.timestamp.strftime('%Y-%m-%d at %H:%M') %}
+  <p>Last edited {{ entry.lastedited.strftime('%Y-%m-%d at %H:%M') }}</p>
+  {% endif %}
   {{ entry.html_content }}
   <p><strong>Tags:</strong></p>
   <p id="tags">{{ tags }}</p>

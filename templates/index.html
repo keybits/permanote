@@ -20,6 +20,9 @@
       </a>
     </h3>
     <p>Created {{ entry.timestamp.strftime('%Y-%m-%d at %H:%M') }}</p>
+    {% if entry.lastedited.strftime('%Y-%m-%d at %H:%M') != entry.timestamp.strftime('%Y-%m-%d at %H:%M') %}
+    <p>Last edited {{ entry.lastedited.strftime('%Y-%m-%d at %H:%M') }}</p>
+    {% endif %}
   {% else %}
     <p>No notes to display.</p>
   {% endfor %}
