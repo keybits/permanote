@@ -64,8 +64,13 @@ const pkgdef :Spk.PackageDefinition = (
         # Sizes are given in device-independent pixels, so if you took these
         # screenshots on a Retina-style high DPI screen, divide each dimension by two.
 
-        #(width = 746, height = 795, jpeg = embed "path/to/screenshot-1.jpeg"),
-        #(width = 640, height = 480, png = embed "path/to/screenshot-2.png"),
+        (width = 841, height = 618, png = embed "screenshots/permanote-screen-0.png"),
+        (width = 870, height = 765, png = embed "screenshots/permanote-screen-1.png"),
+        (width = 883, height = 548, png = embed "screenshots/permanote-screen-2.png"),
+        (width = 842, height = 536, png = embed "screenshots/permanote-screen-3.png"),
+        (width = 858, height = 804, png = embed "screenshots/permanote-screen-4.png"),
+        (width = 869, height = 813, png = embed "screenshots/permanote-screen-5.png"),
+        (width = 858, height = 467, png = embed "screenshots/permanote-screen-6.png"),
       ],
       changeLog = (defaultText = embed "CHANGELOG.md"),
       # Documents the history of changes in Github-flavored markdown format (with the same restrictions
