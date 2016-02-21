@@ -50,28 +50,32 @@ def archive():
 def create():
     if request.method == 'POST':
         if request.form.get('title') and request.form.get('content'):
-            entry = Entry.create(
-                title=request.form['title'],
-                content=request.form['content'],
-                archived=request.form.get('archived') or False)
-            tags = request.form['tags'].split()
-            # present is a check to see if the tag exists
-            present = 0
-            # add or create tags
-            for tag in tags:
-                for entrytag in entry.tags:
-                    if tag == entrytag.tag:
-                        present = 1
-                if present == 0:
-                    try:
-                        thistag = Tag.get(Tag.tag == tag)
-                        entry.tags.add(thistag)
-                    except:
-                        tag_obj, was_created = Tag.create_or_get(tag=tag)
-                        EntryTags.create(tag=tag_obj, entry=entry)
+            try:
+                entry = Entry.create(
+                    title=request.form['title'],
+                    content=request.form['content'],
+                    archived=request.form.get('archived') or False)
+                tags = request.form['tags'].split()
+                # present is a check to see if the tag exists
                 present = 0
-            flash('Entry created successfully.', 'success')
-            return redirect(url_for('detail', slug=entry.slug))
+                # add or create tags
+                for tag in tags:
+                    for entrytag in entry.tags:
+                        if tag == entrytag.tag:
+                            present = 1
+                    if present == 0:
+                        try:
+                            thistag = Tag.get(Tag.tag == tag)
+                            entry.tags.add(thistag)
+                        except:
+                            tag_obj, was_created = Tag.create_or_get(tag=tag)
+                            EntryTags.create(tag=tag_obj, entry=entry)
+                    present = 0
+                flash('Entry created successfully.', 'success')
+                return redirect(url_for('detail', slug=entry.slug))
+            except:
+                flash('Note title already exists', 'danger')
+                return render_template('create.html')
         # TODO Refactor the below and above to make it more DRY or not
         # to need to display seconds (e.g. add some kind of suffix if entry
         # already exists)
@@ -104,40 +108,44 @@ def edit(slug):
         tags = tags + " " + tag.tag
     if request.method == 'POST':
         if request.form.get('title') and request.form.get('content'):
-            entry.title = request.form['title']
-            entry.content = request.form['content']
-            entry.archived = request.form.get('archived') or False
-            entry.lastedited = datetime.datetime.now()
-            # convert the string of tags to a list
-            tags = request.form['tags'].split()
-            # present is a check to see if the tag exists
-            present = 0
-            # add or create tags
-            for tag in tags:
-                for entrytag in entry.tags:
-                    if tag == entrytag.tag:
-                        present = 1
-                if present == 0:
-                    try:
-                        thistag = Tag.get(Tag.tag == tag)
-                        entry.tags.add(thistag)
-                    except:
-                        tag_obj, was_created = Tag.create_or_get(tag=tag)
-                        EntryTags.create(tag=tag_obj, entry=entry)
+            try:
+                entry.title = request.form['title']
+                entry.content = request.form['content']
+                entry.archived = request.form.get('archived') or False
+                entry.lastedited = datetime.datetime.now()
+                # convert the string of tags to a list
+                tags = request.form['tags'].split()
+                # present is a check to see if the tag exists
                 present = 0
-            # remove tags
-            for entrytag in entry.tags:
+                # add or create tags
                 for tag in tags:
-                    if entrytag.tag == tag:
-                        present = 1
-                if present == 0:
-                    thistag = Tag.get(Tag.tag == entrytag.tag)
-                    entry.tags.remove(thistag)
-                present = 0
-            entry.save()
+                    for entrytag in entry.tags:
+                        if tag == entrytag.tag:
+                            present = 1
+                    if present == 0:
+                        try:
+                            thistag = Tag.get(Tag.tag == tag)
+                            entry.tags.add(thistag)
+                        except:
+                            tag_obj, was_created = Tag.create_or_get(tag=tag)
+                            EntryTags.create(tag=tag_obj, entry=entry)
+                    present = 0
+                # remove tags
+                for entrytag in entry.tags:
+                    for tag in tags:
+                        if entrytag.tag == tag:
+                            present = 1
+                    if present == 0:
+                        thistag = Tag.get(Tag.tag == entrytag.tag)
+                        entry.tags.remove(thistag)
+                    present = 0
+                entry.save()
 
-            flash('Note updated successfully.', 'success')
-            return redirect(url_for('detail', slug=entry.slug))
+                flash('Note updated successfully.', 'success')
+                return redirect(url_for('detail', slug=entry.slug))
+            except:
+                flash('Note title already exists', 'danger')
+                return render_template('create.html')
         else:
             flash('Title and Content are required.', 'danger')
 
