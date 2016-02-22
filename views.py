@@ -12,11 +12,14 @@ from playhouse.sqlite_ext import *
 from app import application
 from models import Entry, Tag, EntryTags
 
-# Make url_for use https for redirects on Sandstorm
+# Make url_for use https when hosted on Sandstorm with SSL
 def url_for(endpoint, **kwargs):
     if os.getenv('SANDSTORM'):
         kwargs.setdefault('_external', True)
-        kwargs.setdefault('_scheme', 'https')
+        if request.headers.get('X-Forwarded-Proto') == "https":
+            kwargs.setdefault('_scheme', 'https')
+        else:
+            kwargs.setdefault('_scheme', 'http')
     return flask_url_for(endpoint, **kwargs)
 
 @application.route('/')

@@ -147,6 +147,8 @@ opt/app/env/lib/python2.7/site-packages/jinja2/bccache.py
 opt/app/env/lib/python2.7/site-packages/jinja2/bccache.pyc
 opt/app/env/lib/python2.7/site-packages/jinja2/compiler.py
 opt/app/env/lib/python2.7/site-packages/jinja2/compiler.pyc
+opt/app/env/lib/python2.7/site-packages/jinja2/debug.py
+opt/app/env/lib/python2.7/site-packages/jinja2/debug.pyc
 opt/app/env/lib/python2.7/site-packages/jinja2/defaults.py
 opt/app/env/lib/python2.7/site-packages/jinja2/defaults.pyc
 opt/app/env/lib/python2.7/site-packages/jinja2/environment.py
