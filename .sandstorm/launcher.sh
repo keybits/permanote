@@ -11,4 +11,4 @@ mkdir -p /var/run
 set +o nounset
 source /opt/app/env/bin/activate
 set -o nounset
-python /opt/app/main.py
+cd /opt/app && python main.py

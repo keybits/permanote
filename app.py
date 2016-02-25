@@ -13,7 +13,6 @@ if os.getenv('SANDSTORM'):
     DATABASE = 'sqliteext:////var/permanote.db'
 else:
     DATABASE = 'sqliteext:///%s' % os.path.join(APP_DIR, 'permanote.db')
-    DEBUG = True
 
 application = Flask(__name__)
 application.config.from_object(__name__)
@@ -29,7 +28,6 @@ database = flask_db.database
 # Upload folder and file allowed extensions
 if os.getenv('SANDSTORM'):
     application.config['UPLOAD_FOLDER'] = '/var/uploads'
-    application.config['PREFERRED_URL_SCHEME'] = 'https'
     application.config['DEBUG'] = False
 else:
     application.config['UPLOAD_FOLDER'] = '%s/uploads' % os.path.join(APP_DIR)
