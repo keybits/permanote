@@ -1,21 +1,13 @@
 import datetime
 
-from flask import (Markup)
+from flask import Markup
 from markdown import markdown
 from markdown.extensions.codehilite import CodeHiliteExtension
 from markdown.extensions.extra import ExtraExtension
-from micawber import bootstrap_basic, parse_html
-from micawber.cache import Cache as OEmbedCache
 from playhouse.sqlite_ext import *
 from playhouse.fields import ManyToManyField
 
 from app import application, flask_db, database
-
-
-# Configure micawber with the default OEmbed providers (YouTube, Flickr, etc).
-# We'll use a simple in-memory cache so that multiple requests for the same
-# video don't require multiple network requests.
-oembed_providers = bootstrap_basic(OEmbedCache())
 
 
 class Entry(flask_db.Model):
@@ -36,12 +28,7 @@ class Entry(flask_db.Model):
         hilite = CodeHiliteExtension(linenums=False, css_class='highlight')
         extras = ExtraExtension()
         markdown_content = markdown(self.content, extensions=[hilite, extras])
-        oembed_content = parse_html(
-            markdown_content,
-            oembed_providers,
-            urlize_all=True,
-            maxwidth=application.config['SITE_WIDTH'])
-        return Markup(oembed_content)
+        return Markup(markdown_content)
 
     def save(self, *args, **kwargs):
         # Generate a URL-friendly representation of the entry's title.

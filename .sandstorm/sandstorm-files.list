@@ -19,6 +19,7 @@ lib/x86_64-linux-gnu/libdl-2.19.so
 lib/x86_64-linux-gnu/libdl.so.2
 lib/x86_64-linux-gnu/libexpat.so.1
 lib/x86_64-linux-gnu/libexpat.so.1.6.0
+lib/x86_64-linux-gnu/libgcc_s.so.1
 lib/x86_64-linux-gnu/liblzma.so.5
 lib/x86_64-linux-gnu/liblzma.so.5.0.0
 lib/x86_64-linux-gnu/libm-2.19.so
@@ -143,15 +144,6 @@ opt/app/env/lib/python3.4/site-packages/Pygments-2.1.1.dist-info/entry_points.tx
 opt/app/env/lib/python3.4/site-packages/__pycache__/itsdangerous.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/__pycache__/peewee.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/__pycache__/pkg_resources.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4
-opt/app/env/lib/python3.4/site-packages/bs4/__pycache__/__init__.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/__pycache__/dammit.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/__pycache__/element.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/builder
-opt/app/env/lib/python3.4/site-packages/bs4/builder/__pycache__/__init__.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/builder/__pycache__/_html5lib.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/builder/__pycache__/_htmlparser.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/bs4/builder/__pycache__/_lxml.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/flask
 opt/app/env/lib/python3.4/site-packages/flask/__pycache__/__init__.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/flask/__pycache__/_compat.cpython-34.pyc
@@ -215,13 +207,6 @@ opt/app/env/lib/python3.4/site-packages/markupsafe
 opt/app/env/lib/python3.4/site-packages/markupsafe/__pycache__/__init__.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/markupsafe/__pycache__/_compat.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/markupsafe/_speedups.cpython-34m.so
-opt/app/env/lib/python3.4/site-packages/micawber
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/__init__.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/cache.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/compat.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/exceptions.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/parsers.cpython-34.pyc
-opt/app/env/lib/python3.4/site-packages/micawber/__pycache__/providers.cpython-34.pyc
 opt/app/env/lib/python3.4/site-packages/pip-1.5.6.dist-info/entry_points.txt
 opt/app/env/lib/python3.4/site-packages/playhouse
 opt/app/env/lib/python3.4/site-packages/playhouse/__init__.py
@@ -408,6 +393,7 @@ opt/app/templates/detail.html
 opt/app/templates/edit.html
 opt/app/templates/includes/pagination.html
 opt/app/templates/index.html
+opt/app/templates/taglist.html
 proc/cpuinfo
 sandstorm-http-bridge
 sandstorm-http-bridge-config
