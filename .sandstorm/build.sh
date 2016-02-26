@@ -2,7 +2,7 @@
 set -euo pipefail
 VENV=/opt/app/env
 if [ ! -d $VENV ] ; then
-    virtualenv $VENV
+    virtualenv -p python3 $VENV
 else
     echo "$VENV exists, moving on"
 fi

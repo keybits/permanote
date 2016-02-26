@@ -32,3 +32,5 @@ GATEWAY_IP=$(ip route  | grep ^default  | cut -d ' ' -f 3)
 if nc -z "$GATEWAY_IP" 3142 ; then
     echo "Acquire::http::Proxy \"http://$GATEWAY_IP:3142\";" > /etc/apt/apt.conf.d/80httpproxy
 fi
+# Configure apt to retry fetching things that fail to download.
+echo "APT::Acquire::Retries \"10\";" > /etc/apt/apt.conf.d/80sandstorm-retry
