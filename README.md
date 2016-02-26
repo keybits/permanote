@@ -7,6 +7,12 @@ A personal note-taking application designed for Sandstorm.
 
 It has the features I want. I use it for keeping a journal and recording technical tips and documentation when I need longer form notes. For me it has replaced Evernote and Google Keep - although it clearly doesn't have many of Evernote's features. I still use Google Keep for small quick notes that I need to be synced with mobile devices.
 
+## Installation
+
+If you have a Sandstorm account on [Oasis](https://oasis.sandstorm.io/) or a self-hosted Sandstorm instance, it's simple to [install Permanote from the Sandstorm app market](https://apps.sandstorm.io/app/svwrpwnd3c380d1f99ge7g0qnjdq6y785c36s7qtqryxwkmn20qh).
+
+If you want to run it locally for development, you can clone this repo into a Python 2 virtualenv. Then just `pip install -r requirements.txt` and `python main.py`
+
 ## Warning and help appreciated
 
 This was hacked together over a weekend - please consider it Beta software and don't trust important data just yet. The code is horrible in many places! Pull requests gratefully received if you'd like to clean anything up before I get there.
