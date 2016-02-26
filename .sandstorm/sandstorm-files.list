@@ -541,6 +541,7 @@ opt/app/static/js/jquery.inline-attachment.min.js
 opt/app/templates/base.html
 opt/app/templates/create.html
 opt/app/templates/detail.html
+opt/app/templates/edit.html
 opt/app/templates/includes/pagination.html
 opt/app/templates/index.html
 opt/app/templates/taglist.html
