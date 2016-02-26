@@ -46,13 +46,13 @@ This was hacked together over a weekend - please consider it Beta software and d
 
 ### Charles Leifer
 
-A lot of the code for this application was lifted directly from [this blog post by Charles Leifer](http://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-less)
+A lot of the code for this application was lifted directly from [this blog post by Charles Leifer](http://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-less).
 
-Many thanks to Charles for his helpful blog posts and for creating excellent [support for SQLite](http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlite-extensions) from his [Peewee](http://docs.peewee-orm.com/en/latest/) ORM. This makes an great choice for developing lightweight Sandstorm apps that are easy to develop and fast to load.
+Many thanks to Charles for his helpful blog posts and for creating excellent [support for SQLite](http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlite-extensions) from his [Peewee](http://docs.peewee-orm.com/en/latest/) ORM. This makes a great choice for developing lightweight Sandstorm apps that are easy to develop and fast to load.
 
 ### Logo
 
-The dolphin logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji ([CC Attribution License](https://github.com/twitter/twemoji/blob/gh-pages/LICENSE-GRAPHICS))
+The dolphin logo is from the [Twitter twemoji collection](https://github.com/twitter/twemoji) ([Creative Commons Attribution License](https://github.com/twitter/twemoji/blob/gh-pages/LICENSE-GRAPHICS))
 
 **Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memory.
 
