@@ -37,23 +37,23 @@ This was hacked together over a weekend - please consider it Beta software and d
 
 ## Technology
 
-- Flask
-- Peewee
-- SQLite
-- jquery inline-attachment
+- [Flask](http://flask.pocoo.org/)
+- [Peewee](http://docs.peewee-orm.com/en/latest/)
+- [SQLite](https://www.sqlite.org/)
+- [jquery inline-attachment](https://github.com/Rovak/InlineAttachment)
 
 ## Credits
 
 ### Charles Leifer
 
-A lot of the code for this application was lifted directly from this blog post by Charles Leifer: <http://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-less/>
+A lot of the code for this application was lifted directly from [this blog post by Charles Leifer](http://charlesleifer.com/blog/how-to-make-a-flask-blog-in-one-hour-or-less)
 
-Many thanks to Charles for his helpful blog posts and for creating excellent support for SQLite with his Peewee ORM. This makes an excellent choice for developing Sandstorm apps.
+Many thanks to Charles for his helpful blog posts and for creating excellent [support for SQLite](http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlite-extensions) from his [Peewee](http://docs.peewee-orm.com/en/latest/) ORM. This makes an great choice for developing lightweight Sandstorm apps that are easy to develop and fast to load.
 
 ### Logo
 
-The dolphin logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji
+The dolphin logo is from the Twitter twemoji collection: https://github.com/twitter/twemoji ([CC Attribution License](https://github.com/twitter/twemoji/blob/gh-pages/LICENSE-GRAPHICS))
 
-**Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memories.
+**Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memory.
 
-Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
+Apparently [dolphins have even better memory](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/) than elephants. I like how the twemoji dolphin icon has a big head - lots of room to remember stuff in there.
