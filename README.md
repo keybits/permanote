@@ -1,4 +1,7 @@
+
 # Permanote
+
+<img title="Permanote dolphin logo" alt="Permanote dolphin logo" align="right" src=".sandstorm/app-graphics/permanote-dolphin150.png">
 
 A personal note-taking application designed for Sandstorm.
 
@@ -15,7 +18,7 @@ This was hacked together over a weekend - please consider it Beta software and d
 - Full text search
 - Tags
 - Syntax highlighting
-- Rich media embeds (e.g. YouTube videos)
+- ~~Rich media embeds (e.g. YouTube videos)~~ removed for now
 - Archive old notes
 - Keyboard shortcuts to create new note and submit note when done editing
 
@@ -48,5 +51,3 @@ The dolphin logo is from the Twitter twemoji collection: https://github.com/twit
 **Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memories.
 
 Apparently [dolphins have even better memories](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/)
-
-![Permanote dolphin logo](.sandstorm/app-graphics/permanote-dolphin150.png)
