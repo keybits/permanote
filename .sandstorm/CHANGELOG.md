@@ -1,3 +1,7 @@
+# 0.1.4 Fix bug when editing
+
+- Bug fix - vagrant-spk hadn't picked up all the files so Permanote crashed on note editing
+
 # 0.1.3 Back to Python 2
 
 - To make Python 3 work it the spk becomes very large as it needs to pull in the whole Python 3 runtime and Debian pure-python packages. So I'm going back to Python 2.
