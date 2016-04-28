@@ -1,4 +1,3 @@
-
 # Permanote
 
 <img title="Permanote dolphin logo" alt="Permanote dolphin logo" align="right" src=".sandstorm/app-graphics/permanote-dolphin150.png">
