@@ -53,6 +53,10 @@ Many thanks to Charles for his helpful blog posts and for creating excellent [su
 
 The dolphin logo is from the [Twitter twemoji collection](https://github.com/twitter/twemoji) ([Creative Commons Attribution License](https://github.com/twitter/twemoji/blob/gh-pages/LICENSE-GRAPHICS))
 
+And because this gif exists!
+
+![Spinning dolphin](http://media0.giphy.com/media/M6lYPX5nDwcHm/giphy.gif)
+
 **Why a dolphin for the logo?** Evernote use an elephant for their logo because elephants are known to have good memory.
 
 Apparently [dolphins have even better memory](http://news.nationalgeographic.com/news/2013/08/130806-dolphins-memories-animals-science-longest/) than elephants. I like how the twemoji dolphin icon has a big head - lots of room to remember stuff in there.
