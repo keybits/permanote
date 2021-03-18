@@ -1,3 +1,7 @@
+# ARCHIVED
+
+The code in this project is no longer maintained. Leaving it here in case it is of interest to anyone making something similar.
+
 # Permanote
 
 <img title="Permanote dolphin logo" alt="Permanote dolphin logo" align="right" src=".sandstorm/app-graphics/permanote-dolphin150.png">
